@@ -1,2 +1,18 @@
-on: ubuntu
+# .travis.yml
+language: java
+jdk:
+  - openjdk8
 
+os:
+  - linux
+  - windows
+  - osx
+
+# Limit builds to the master branch and PRs targeting it
+branches:
+  only:
+    - master
+
+# Build and test using Maven
+script:
+  - mvn -B package
